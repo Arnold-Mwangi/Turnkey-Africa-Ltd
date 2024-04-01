@@ -41,3 +41,38 @@ returns the largest difference between any two numbers in the list. For example,
     <li>Calculate the largest difference between the max and min  numbers in the list.</li>
     <li>Print the result.</li>
 </ol>
+
+
+## Assessments Q3.
+-Consider the following Java code:
+```bash 
+public class AverageCalculator {
+public static double calculateAverage(int[] numbers) {
+int total = 0;
+for (int num : numbers) {
+total += num;
+}
+double average = total / numbers.length;
+return average;
+}
+public static void main(String[] args) {
+int[] data = {5, 10, 15, 20, 25};
+double result = calculateAverage(data);
+System.out.println("The average is: " + result);
+}
+}
+```
+
+
+- The bug exists in line :
+```bash 
+double average = total / numbers.length; 
+```
+- `Total` variable is an integer meaning it will always store a full value with no decimalplaces
+- `numbers.length` is also an integer hence the two wont take in floating numbers
+- Hence the division will be an integer division resulting in loss of precision.
+
+To fix this issue we can convert Total variable to doubles before performing the division by casting `total` variable to a `double` explicitly as shown below
+ ```bash
+ double average = (double) total / numbers.length;
+ ```
