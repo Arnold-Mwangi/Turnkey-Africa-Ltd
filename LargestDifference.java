@@ -24,7 +24,7 @@ public class LargestDifference {
 
         System.out.println("Largest difference between any two numbers: " + largestDifference);
 
-        // Run tests
+        // Run the input
 
         // Run();
     }
